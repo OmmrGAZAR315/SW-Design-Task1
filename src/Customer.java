@@ -29,4 +29,8 @@ public class Customer {
         System.out.println("TOTAL Charge: " + totalPay + " EGP");
     }
 
+    public void setTotalPay(double price) {
+        totalPay += price;
+        numOfItems++;
+    }
 }

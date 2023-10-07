@@ -1,7 +1,11 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
     private String name;
     private double totalPay;
     private int numOfItems;
+    private List<Reading_item> itemList = new ArrayList<>();
 
     public Customer() {
     } // default constructor
@@ -31,6 +35,12 @@ public class Customer {
 
     public void setTotalPay(double price) {
         totalPay += price;
+        numOfItems++;
+    }
+
+    public void buy(Reading_item item) {
+        itemList.add(item);
+        totalPay += item.getPrice();
         numOfItems++;
     }
 }

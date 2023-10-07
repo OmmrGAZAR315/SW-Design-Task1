@@ -7,7 +7,7 @@ public class Main {
         Book[] books = new Book[6];
 
         books[0] = new Book("Java", 100, 2020, "Ahmed");
-        books[1] = new Book("C++", 150, 1979, "Willam");
+        books[1] = new Book("C++", 150, 1979, "William");
         books[2] = new Book("Python", 200, 2010, "Mohamed");
         books[3] = new Book("C#", 250, 2015, "Ali");
         books[4] = new Book("JavaScript", 300, 2019, "Mahmoud");
@@ -25,7 +25,7 @@ public class Main {
             System.out.println("Are you sure you want to buy this book? (y/n)");
             char option2 = scanner.next().charAt(0);
             if (option2 == 'y')
-                customer.setTotalPay(books[option - '1'].getPrice());
+                customer.buy(books[option - '1']);
 
             System.out.println("Do you want to buy another book? (y/n)");
             char choice = scanner.next().charAt(0);

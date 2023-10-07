@@ -4,24 +4,21 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Book[] books = new Book[6];
 
-        Book book1 = new Book("Java", 100, 2020, "Ahmed");
-        Book book2 = new Book("C++", 150, 1979, "Willam");
-        Book book3 = new Book("Python", 200, 2010, "Mohamed");
-        Book book4 = new Book("C#", 250, 2015, "Ali");
-        Book book5 = new Book("JavaScript", 300, 2019, "Mahmoud");
-        Book book6 = new Book("PHP", 350, 2018, "Hassan");
-        Book[] books = {book1, book2, book3, book4, book5, book6};
+        books[0] = new Book("Java", 100, 2020, "Ahmed");
+        books[1] = new Book("C++", 150, 1979, "Willam");
+        books[2] = new Book("Python", 200, 2010, "Mohamed");
+        books[3] = new Book("C#", 250, 2015, "Ali");
+        books[4] = new Book("JavaScript", 300, 2019, "Mahmoud");
+        books[5] = new Book("PHP", 350, 2018, "Hassan");
 
         Customer customer = new Customer("Ahmed", 0, 0);
 
         System.out.println("Welcome " + customer.getName() + " to our library\n");
         System.out.println("Please choose the book you want to buy: \n");
         while (true) {
-            for (int i = 0; i < books.length; i++) {
-                System.out.print((i + 1) + "- ");
-                books[i].displayInfo();
-            }
+            Book.printAllObjects();
             char option = scanner.next().charAt(0);
 
             books[option - '1'].displayInfo();

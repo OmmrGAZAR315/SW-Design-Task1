@@ -22,15 +22,17 @@ public class Book extends Reading_item {
         if (author.length() > 16)
             author = (author.substring(0, 14) + "...");
 
-        System.out.printf("| %-17s | %-17s | %-11f | %-12d |\n", getTitle(), author, getPrice(), getYear());
+        System.out.printf("| %-17s | %-17s | %-11d | %-12.2f |\n", getTitle(), author,  getYear(),getPrice());
     }
 
     public static void printAllObjects() {
-        System.out.println("+-------------------+-------------------+-------------+--------------+");
-        System.out.println("|      Title        |      Author       |     Year    |     Price    |");
-        System.out.println("+-------------------+-------------------+-------------+--------------+");
-        for (int i = 0; i < books.size(); i++)
+        System.out.println("+-----+-------------------+-------------------+-------------+--------------+");
+        System.out.println("| ID  |      Title        |      Author       |     Year    |     Price    |");
+        System.out.println("+-----+-------------------+-------------------+-------------+--------------+");
+        for (int i = 0; i < books.size(); i++) {
+            System.out.printf("|  %-3d", i + 1);
             books.get(i).displayInfo();
-        System.out.println("+-------------------+-------------------+-------------+--------------+");
+        }
+        System.out.println("+-----+-------------------+-------------------+-------------+--------------+");
     }
 }

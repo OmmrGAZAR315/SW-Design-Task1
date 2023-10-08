@@ -21,6 +21,7 @@ public class Main {
             Book.printAllObjects();
             char option = scanner.next().charAt(0);
 
+            System.out.print("      ");
             books[option - '1'].displayInfo();
             System.out.println("Are you sure you want to buy this book? (y/n)");
             char option2 = scanner.next().charAt(0);

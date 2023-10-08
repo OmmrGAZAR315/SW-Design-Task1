@@ -25,8 +25,7 @@ public class Main {
             books[option - '1'].displayInfo();
             System.out.println("Are you sure you want to buy this book? (y/n)");
             char option2 = scanner.next().charAt(0);
-            if (option2 == 'y')
-                customer.buy(books[option - '1']);
+            if (option2 == 'y') customer.buy(books[option - '1']);
 
             System.out.println("Do you want to buy another book? (y/n)");
             char choice = scanner.next().charAt(0);
